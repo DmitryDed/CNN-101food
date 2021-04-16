@@ -21,7 +21,7 @@ for gpu in gpus:
 
 
 LOG_DIR = 'logs'
-BATCH_SIZE = 256
+BATCH_SIZE = 32
 NUM_CLASSES = 101
 RESIZE_TO = 224
 TRAIN_SIZE = 101000
@@ -34,7 +34,7 @@ def parse_proto_example(proto):
   }
   example = tf.io.parse_single_example(proto, keys_to_features)
   example['image'] = tf.image.decode_jpeg(example['image/encoded'], channels=3)
-  example['image'] = tf.image.convert_image_dtype(example['image'], dtype=tf.float32)
+  example['image'] = tf.image.convert_image_dtype(example['image'], dtype=tf.uint8)
   example['image'] = tf.image.resize(example['image'], tf.constant([RESIZE_TO, RESIZE_TO]))
   return example['image'], tf.one_hot(example['image/label'], depth=NUM_CLASSES)
 
@@ -50,22 +50,16 @@ def create_dataset(filenames, batch_size):
   """
   return tf.data.TFRecordDataset(filenames)\
     .map(parse_proto_example, num_parallel_calls=tf.data.AUTOTUNE)\
-    .map(normalize)\
     .batch(batch_size)\
     .prefetch(tf.data.AUTOTUNE)
 
 
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  x = tf.keras.layers.Conv2D(filters=8, kernel_size=3)(inputs)
-  x = tf.keras.layers.Conv2D(filters=8, kernel_size=3)(x)
-  x = tf.keras.layers.MaxPool2D()(x)
-  x = tf.keras.layers.Conv2D(filters=8, kernel_size=3)(x)
-  x = tf.keras.layers.MaxPool2D()(x)
-  x = tf.keras.layers.Conv2D(filters=8, kernel_size=3)(x)
-  x = tf.keras.layers.MaxPool2D()(x)
-  x = tf.keras.layers.Flatten()(x)
-  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.softmax)(x)
+  outputs = tf.keras.applications.EfficientNetB0(
+  include_top=True, weights=None, input_tensor=None,
+  input_shape=None, pooling=None, classes=NUM_CLASSES,
+  classifier_activation='softmax')(inputs)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 
 
