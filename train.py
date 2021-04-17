@@ -55,12 +55,11 @@ def create_dataset(filenames, batch_size):
 
 
 def build_model():
-  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  outputs = tf.keras.applications.EfficientNetB0(
-  include_top=True, weights=None, input_tensor=None,
-  input_shape=None, pooling=None, classes=NUM_CLASSES,
-  classifier_activation='softmax')(inputs)
-  return tf.keras.Model(inputs=inputs, outputs=outputs)
+ inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+ model = tf.keras.applications.EfficientNetB0(include_top=False, input_tensor=inputs, weights='imagenet')
+ model.trainable = False
+ x = tf.keras.layers.GlobalAveragePooling2D()(model.output)  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.softmax)(x)
+ return tf.keras.Model(inputs=inputs, outputs=outputs)
 
 
 def main():
