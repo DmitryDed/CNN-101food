@@ -1,30 +1,14 @@
-# Food-101 classification example using CNN on tf 2.x + keras
+## Графики
 
-The goal of that lab is to create CNN that solves Food-101 Classification task
 
-Pre-requisites:
-1. TensorFlow 2.x environment
+# Создание и обучение сверточной нейронной сети произвольной архитектуры с количеством сверточных слоев >3
 
-Steps to reproduce results:
-1. Clone the repository:
-```
-git clone git@github.com:AlexanderSoroka/CNN-food-101.git
-```
-2. Download [Food-101](https://www.kaggle.com/kmader/food41) from kaggle to archive.zip
-- unpack dataset `unzip archive.zip`
-- change current directory to the folder with unpacked dataset
 
-3. Generate TFRecords with build_image_data.py script:
+## Графики
 
-```
-python build_image_data.py --input <dataset root path> --output <tf output path>
-```
 
-Validate that total size of generated tfrecord files is close ot original dataset size
+## Анализ результатов
 
-4. Run train.py to train pre-defined CNN:
-```
-python train.py --train '<dataset root path>/train*'
-```
+К исходной структуре были добавлены 3 свёрточных слоя. Судя по графикам, приведенным выше, к улучшению результатов это не привело. Добавление слоёв привело к увеличению глубины нейронной сети и обучение стало более долгим. На графике функции потерь точность на validation значительно выше, чем на train, а также точность после добавления слоев стала хуже, следовательно, улучшений не произошло из-за случайно выбранной архитектуры нашей сети.
 
-5. Modify model and have fun
+![image](https://user-images.githubusercontent.com/81873177/114463619-532dd880-9bed-11eb-9dd1-e67e55665172.png)
