@@ -44,7 +44,7 @@ alpha -	минимальное значение скорости обучени�
 
 Графики темпов обучения 
 
-![SVG example](./grafs/cd 3b1.svg)
+![SVG example](./grafs/cd3b1.svg)
 ![image](https://user-images.githubusercontent.com/81873177/116308489-37f7c700-a7b0-11eb-9f4c-e848d6988167.png)
 
 ## b. Косинусное затухание с перезапусками (Cosine Decay with Restarts) 
