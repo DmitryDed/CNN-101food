@@ -1,21 +1,21 @@
 ## Лабораторная работа #3.
 ## Изучение влияние параметра “темп обучения” на процесс обучения нейронной сети на примере решения задачи классификации Food-101 с использованием техники обучения Transfer Learning
 ## 1. С использованием и техники обучения Transfer Learning обучить нейронную сеть EfficientNet-B0 (предварительно обученную на базе изображений imagenet) для решения задачи классификации изображений Food-101 с использованием фиксированных темпов обучения 0.01, 0.001, 0.0001.
-```python
-tf.keras.experimental.CosineDecay(initial_learning_rate, decay_steps, alpha=0.0)
-```
-initial_learning_rate	- начальная скорость обучения
+ 
 
 ## Графики
 ![image](https://user-images.githubusercontent.com/81873177/116250303-46c18800-a776-11eb-8407-f5c1215895b5.png)
-![SVG example](file:///C:/Users/abran/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/40a/%D0%BB%D0%B0%D0%B13/epoch_categorical_accuracy2.svg)
-
-
-
 
 
 ## 2. Реализовать и применить в обучении следующие политики изменения темпа обучения, а также определить оптимальные параметры для каждой политики:
 ## a. Косинусное затухание (Cosine Decay) 
+```python
+tf.keras.experimental.CosineDecay(initial_learning_rate, decay_steps, alpha=0.0)
+```
+initial_learning_rate	- начальная скорость обучения
+decay_steps	- количество шагов
+alpha -	минимальное значение скорости обучения
+
 ## Графики
 ![image](https://user-images.githubusercontent.com/81873177/116254807-55aa3980-a77a-11eb-8246-d9b70013396e.png)
 
