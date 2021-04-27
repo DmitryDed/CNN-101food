@@ -10,7 +10,7 @@
 ![SVG example](./grafs/epoch_categorical_accuracy2.svg)
 
 График функции потерь
-![SVG example](./grafs/epoch_categorical_accuracy2.svg)
+![SVG example](./grafs/epoch_loss2.svg)
 
 ## 2. Реализовать и применить в обучении следующие политики изменения темпа обучения, а также определить оптимальные параметры для каждой политики:
 ## a. Косинусное затухание (Cosine Decay) 
@@ -28,7 +28,7 @@ alpha -	минимальное значение скорости обучени�
 ![image](https://user-images.githubusercontent.com/81873177/116254807-55aa3980-a77a-11eb-8246-d9b70013396e.png)
 
 График точности
-
+![SVG example](./grafs/epoch_categorical_accuracy3a.svg)
 ![image](https://user-images.githubusercontent.com/81873177/116276753-7a5bdc80-a78d-11eb-92fb-3da5bb33ee50.png)
 
 
@@ -37,6 +37,7 @@ alpha -	минимальное значение скорости обучени�
 ![image](https://user-images.githubusercontent.com/81873177/116276771-80ea5400-a78d-11eb-9651-aa989a53fa88.png)
 
 
+![SVG example](./grafs/epoch_loss3a.svg)
 
 ## b. Косинусное затухание с перезапусками (Cosine Decay with Restarts) 
 ```python
