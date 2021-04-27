@@ -34,10 +34,9 @@ alpha -	минимальное значение скорости обучени�
 
 График функции потерь
 
-![image](https://user-images.githubusercontent.com/81873177/116276771-80ea5400-a78d-11eb-9651-aa989a53fa88.png)
-
-
 ![SVG example](./grafs/epoch_loss3a.svg)
+
+![image](https://user-images.githubusercontent.com/81873177/116276771-80ea5400-a78d-11eb-9651-aa989a53fa88.png)
 
 ## b. Косинусное затухание с перезапусками (Cosine Decay with Restarts) 
 ```python
