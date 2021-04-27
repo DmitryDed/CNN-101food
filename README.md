@@ -8,9 +8,13 @@
 
 График точности
 ![SVG example](./grafs/epoch_categorical_accuracy2.svg)
+![image](https://user-images.githubusercontent.com/81873177/116288822-91ed9200-a79a-11eb-9859-1cc42d288392.png)
+
 
 График функции потерь
 ![SVG example](./grafs/epoch_loss2.svg)
+![image](https://user-images.githubusercontent.com/81873177/116288857-9914a000-a79a-11eb-8258-6bc2353e2e62.png)
+
 
 ## 2. Реализовать и применить в обучении следующие политики изменения темпа обучения, а также определить оптимальные параметры для каждой политики:
 ## a. Косинусное затухание (Cosine Decay) 
