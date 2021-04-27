@@ -5,7 +5,7 @@
 
 ## Графики
 ![image](https://user-images.githubusercontent.com/81873177/116250303-46c18800-a776-11eb-8407-f5c1215895b5.png)
-![SVG example](lab3/grafs/epoch_categorical_accuracy2.svg)
+![SVG example](./grafs/epoch_categorical_accuracy2.svg)
 
 ## 2. Реализовать и применить в обучении следующие политики изменения темпа обучения, а также определить оптимальные параметры для каждой политики:
 ## a. Косинусное затухание (Cosine Decay) 
