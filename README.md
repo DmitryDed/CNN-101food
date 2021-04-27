@@ -42,6 +42,9 @@ alpha -	минимальное значение скорости обучени�
 
 ![image](https://user-images.githubusercontent.com/81873177/116276771-80ea5400-a78d-11eb-9651-aa989a53fa88.png)
 
+Графики темпов обучения 
+![SVG example](./grafs/cd 3b1.svg)
+
 ## b. Косинусное затухание с перезапусками (Cosine Decay with Restarts) 
 ```python
 tf.keras.experimental.CosineDecayRestarts(initial_learning_rate, first_decay_steps, t_mul=2.0, m_mul=1.0)
