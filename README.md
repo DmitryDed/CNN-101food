@@ -22,9 +22,10 @@ tf.keras.layers.experimental.preprocessing.RandomFlip(mode="horizontal_and_verti
 График функции потерь
 
 ![SVG example](./grafs/epoch_losshv.svg)
-![image](https://user-images.githubusercontent.com/81873177/117008364-4f283e80-acf3-11eb-8b90-74b0351efe3c.png)
+![image](https://user-images.githubusercontent.com/81873177/117062390-0ccf2380-ad2c-11eb-9502-42613296002c.png)
 
 Изображение, полученное при использовании оптимальных параметров:
+
 ![flip-28](https://user-images.githubusercontent.com/81873177/117055295-aba35200-ad23-11eb-8c32-e3825e0e348e.jpg)
 
 
@@ -32,7 +33,6 @@ tf.keras.layers.experimental.preprocessing.RandomFlip(mode="horizontal_and_verti
 
 ## Графики
 ![image](https://user-images.githubusercontent.com/81873177/117046951-f91ac180-ad19-11eb-9310-1a213dae64a1.png)
-
 
 
 График точности
@@ -45,6 +45,7 @@ tf.keras.layers.experimental.preprocessing.RandomFlip(mode="horizontal_and_verti
 ![image](https://user-images.githubusercontent.com/81873177/117046879-e43e2e00-ad19-11eb-95a1-ebf1da727e45.png)
 
 Изображение, полученное при использовании оптимальных параметров:
+
 ![crop-28](https://user-images.githubusercontent.com/81873177/117055360-beb62200-ad23-11eb-939b-cda28f066862.jpg)
 
 
@@ -74,16 +75,43 @@ tf.keras.layers.experimental.preprocessing.RandomRotation(0.03, fill_mode='refle
 ![image](https://user-images.githubusercontent.com/81873177/117007074-dffe1a80-acf1-11eb-926e-f27c5cfe1ab1.png)
 
 Изображение, полученное при использовании оптимальных параметров:
+
 ![3](https://user-images.githubusercontent.com/81873177/117055414-cbd31100-ad23-11eb-8272-5b964eed94d8.jpg)
 
 
 ## 2. Для каждой индивидуальной техники аугментации определить оптимальный набор параметров
 
-
+```python
+tf.keras.layers.experimental.preprocessing.RandomFlip(mode="horizontal", seed=None, name=None)
+tf.keras.layers.experimental.preprocessing.RandomRotation(0.03, fill_mode='reflect', interpolation='bilinear', seed=None, name=None, fill_value=0.0)
+tf.keras.layers.experimental.preprocessing.RandomCrop(CROPSIZE_HEIGHT, CROPSIZE_WIDTH)
+```
 ## 3. Обучить нейронную сеть с использованием оптимальных техник аугментации данных 2a-с совместно
+## Графики
+![image](https://user-images.githubusercontent.com/81873177/117060320-7437a400-ad29-11eb-98ab-f425f1d6db00.png)
+
+
+График точности
+
+![SVG example](./grafs/epoch_categorical_accuracym.svg)
+
+![image](https://user-images.githubusercontent.com/81873177/117060447-9cbf9e00-ad29-11eb-94cb-0d747af97dcf.png)
+
+
+График функции потерь
+
+![SVG example](./grafs/epoch_lossm.svg)
+
+![image](https://user-images.githubusercontent.com/81873177/117060478-a6490600-ad29-11eb-96c1-41e81fdef46d.png)
 
 Изображение, полученное при использовании оптимальных параметров:
+
 ![4](https://user-images.githubusercontent.com/81873177/117055445-d4c3e280-ad23-11eb-9e41-137099ab8fa6.jpg)
 
 ## Анализ результатов:
+
+1. Исследовав график точности и график функции потерь, можно прийти к выводу, что параметр 'horizontal' является оптимальным, так как имеет наивысшие значения на графике точности (67.66%).
+2. Используя технику аугментации данных RandomCrop, можно сделать вывод, что наиболее оптимальными размерами изображения оказались 274х274, так как на графике точности принимает наивысшие значения: 65.31%. Также методом "проб и ошибок" выяснилось, что если брать значения намного большие или намного меньшие, чем наши, то мы потеряем качество изображения.
+3. Используя технику аугментации RandomRotation, выяснилось, что наиболее оптимальными параметрами являются: (0.03, fill_mode='reflect', interpolation='bilinear', seed=None, name=None, fill_value=0.0). Значения на графике точности при этом были 67.12%.
+4. При комбинации техник аугментации достигнута точность 65.55%. Сравнивая с RandomFlip, точность уменьшилась на 2,11%, с RandomRotation -  уменьшилась на 1.57%, с RandomCrop - увеличилась на 0,24%.
 
