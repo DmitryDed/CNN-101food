@@ -46,13 +46,15 @@ tf.keras.layers.experimental.preprocessing.RandomRotation(0.03, fill_mode='refle
 
 График точности
 
-![SVG example](./grafs/epoch_categorical_accuracy R.svg)
+![SVG example](./grafs/epoch_categorical_accuracyR.svg)
+
 ![image](https://user-images.githubusercontent.com/81873177/117007038-d4125880-acf1-11eb-98ff-6795a92fcb7d.png)
 
 
 График функции потерь
 
-![SVG example](./grafs/epoch_loss R.svg)
+![SVG example](./grafs/epoch_lossR.svg)
+
 ![image](https://user-images.githubusercontent.com/81873177/117007074-dffe1a80-acf1-11eb-926e-f27c5cfe1ab1.png)
 
 
