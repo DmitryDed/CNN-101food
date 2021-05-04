@@ -24,6 +24,10 @@ tf.keras.layers.experimental.preprocessing.RandomFlip(mode="horizontal_and_verti
 ![SVG example](./grafs/epoch_losshv.svg)
 ![image](https://user-images.githubusercontent.com/81873177/117008364-4f283e80-acf3-11eb-8b90-74b0351efe3c.png)
 
+Изображение, полученное при использовании оптимальных параметров:
+![flip-28](https://user-images.githubusercontent.com/81873177/117055295-aba35200-ad23-11eb-8c32-e3825e0e348e.jpg)
+
+
 ## b. Использование случайной части изображения 
 
 ## Графики
@@ -39,6 +43,9 @@ tf.keras.layers.experimental.preprocessing.RandomFlip(mode="horizontal_and_verti
 График функции потерь
 ![SVG example](./grafs/epoch_lossCR.svg)
 ![image](https://user-images.githubusercontent.com/81873177/117046879-e43e2e00-ad19-11eb-95a1-ebf1da727e45.png)
+
+Изображение, полученное при использовании оптимальных параметров:
+![crop-28](https://user-images.githubusercontent.com/81873177/117055360-beb62200-ad23-11eb-939b-cda28f066862.jpg)
 
 
 ## c. Поворот на случайный угол 
@@ -66,11 +73,17 @@ tf.keras.layers.experimental.preprocessing.RandomRotation(0.03, fill_mode='refle
 
 ![image](https://user-images.githubusercontent.com/81873177/117007074-dffe1a80-acf1-11eb-926e-f27c5cfe1ab1.png)
 
+Изображение, полученное при использовании оптимальных параметров:
+![3](https://user-images.githubusercontent.com/81873177/117055414-cbd31100-ad23-11eb-8272-5b964eed94d8.jpg)
+
 
 ## 2. Для каждой индивидуальной техники аугментации определить оптимальный набор параметров
 
 
 ## 3. Обучить нейронную сеть с использованием оптимальных техник аугментации данных 2a-с совместно
+
+Изображение, полученное при использовании оптимальных параметров:
+![4](https://user-images.githubusercontent.com/81873177/117055445-d4c3e280-ad23-11eb-9e41-137099ab8fa6.jpg)
 
 ## Анализ результатов:
 
