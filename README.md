@@ -45,11 +45,13 @@ tf.keras.layers.experimental.preprocessing.RandomRotation(0.03, fill_mode='refle
 
 
 График точности
-
+![SVG example](./grafs/epoch_categorical_accuracy R.svg)
+![image](https://user-images.githubusercontent.com/81873177/117007038-d4125880-acf1-11eb-98ff-6795a92fcb7d.png)
 
 
 График функции потерь
-
+![SVG example](./grafs/epoch_loss R.svg)
+![image](https://user-images.githubusercontent.com/81873177/117007074-dffe1a80-acf1-11eb-926e-f27c5cfe1ab1.png)
 
 
 ## 2. Реализовать и применить в обучении следующие политики изменения темпа обучения, а также определить оптимальные параметры для каждой политики:
