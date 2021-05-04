@@ -2,11 +2,13 @@
 ##         Использование техник аугментации данных для улучшения сходимости процесса обучения нейронной сети на примере решения задачи классификации Food-101
 
 
-## 1.С использованием, техники обучения Transfer Learning и оптимальной политики изменения темпа обучения, определенной в ходе выполнения лабораторной #3, обучить нейронную сеть EfficientNet-B0 (предварительно обученную на базе изображений imagenet) для решения задачи классификации изображений Food-101 с использованием следующих техник аугментации данных:
+## 1. С использованием, техники обучения Transfer Learning и оптимальной политики изменения темпа обучения, определенной в ходе выполнения лабораторной #3, обучить нейронную сеть EfficientNet-B0 (предварительно обученную на базе изображений imagenet) для решения задачи классификации изображений Food-101 с использованием следующих техник аугментации данных:
 ## a. Случайное горизонтальное и вертикальное отображение 
 
 ```python
-tf.keras.experimental.CosineDecay(initial_learning_rate, decay_steps, alpha=0.0)
+tf.keras.layers.experimental.preprocessing.RandomFlip(mode="vertical", seed=None, name=None)
+tf.keras.layers.experimental.preprocessing.RandomFlip(mode="horizontal", seed=None, name=None)
+tf.keras.layers.experimental.preprocessing.RandomFlip(mode="horizontal_and_vertical", seed=None, name=None)
 ```
 
 ## Графики
@@ -31,9 +33,15 @@ tf.keras.experimental.CosineDecay(initial_learning_rate, decay_steps, alpha=0.0)
 
 
 ## c. Поворот на случайный угол 
- 
+ R1, R2, R3 соответственно:
+```python
+tf.keras.layers.experimental.preprocessing.RandomRotation(0.25, fill_mode='reflect', interpolation='bilinear', seed=None, name=None, fill_value=0.0)
+tf.keras.layers.experimental.preprocessing.RandomRotation(0.12, fill_mode='reflect', interpolation='bilinear', seed=None, name=None, fill_value=0.0)
+tf.keras.layers.experimental.preprocessing.RandomRotation(0.03, fill_mode='reflect', interpolation='bilinear', seed=None, name=None, fill_value=0.0)
+```
 
 ## Графики
+![image](https://user-images.githubusercontent.com/81873177/117006002-8f39f200-acf0-11eb-8a05-89075ea37611.png)
 
 
 График точности
