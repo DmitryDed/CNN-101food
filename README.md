@@ -25,15 +25,20 @@ tf.keras.layers.experimental.preprocessing.RandomFlip(mode="horizontal_and_verti
 ![image](https://user-images.githubusercontent.com/81873177/117008364-4f283e80-acf3-11eb-8b90-74b0351efe3c.png)
 
 ## b. Использование случайной части изображения 
+
 ## Графики
+![image](https://user-images.githubusercontent.com/81873177/117046951-f91ac180-ad19-11eb-9310-1a213dae64a1.png)
 
 
 
 График точности
-
+![SVG example](./grafs/epoch_categorical_accuracyCR.svg)
+![image](https://user-images.githubusercontent.com/81873177/117046917-ed2eff80-ad19-11eb-954d-a75333031661.png)
 
 
 График функции потерь
+![SVG example](./grafs/epoch_lossCR.svg)
+![image](https://user-images.githubusercontent.com/81873177/117046879-e43e2e00-ad19-11eb-95a1-ebf1da727e45.png)
 
 
 ## c. Поворот на случайный угол 
@@ -61,55 +66,6 @@ tf.keras.layers.experimental.preprocessing.RandomRotation(0.03, fill_mode='refle
 
 ![image](https://user-images.githubusercontent.com/81873177/117007074-dffe1a80-acf1-11eb-926e-f27c5cfe1ab1.png)
 
-
-## 2. Реализовать и применить в обучении следующие политики изменения темпа обучения, а также определить оптимальные параметры для каждой политики:
-## a. Косинусное затухание (Cosine Decay) 
-
-```python
-tf.keras.experimental.CosineDecay(initial_learning_rate, decay_steps, alpha=0.0)
-```
-initial_learning_rate	- начальная скорость обучения
-
-decay_steps	- количество шагов
-
-alpha -	минимальное значение скорости обучения
-
-## Графики
-
-
-График точности
-
-
-
-График функции потерь
-
-
-
-Графики темпов обучения 
-
-
-
-## b. Косинусное затухание с перезапусками (Cosine Decay with Restarts) 
-```python
-tf.keras.experimental.CosineDecayRestarts(initial_learning_rate, first_decay_steps, t_mul=2.0, m_mul=1.0)
-```
-initial_learning_rate	- начальная скорость обучения
-
-decay_steps	- количество шагов
-
-t_mul	- используется для определения количества итераций в i-м периоде
-
-m_mul	- используется для получения начальной скорости обучения i-го периода
-
-## Графики
-
-
-График точности
-
-График функции потерь
-
-
-Графики темпов обучения 
 
 ## 2. Для каждой индивидуальной техники аугментации определить оптимальный набор параметров
 
