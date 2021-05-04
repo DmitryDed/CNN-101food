@@ -12,17 +12,21 @@ tf.keras.layers.experimental.preprocessing.RandomFlip(mode="horizontal_and_verti
 ```
 
 ## Графики
-
+![image](https://user-images.githubusercontent.com/81873177/117008405-5a7b6a00-acf3-11eb-8806-22be2b80788b.png)
 
 График точности
 
-
+![SVG example](./grafs/epoch_categorical_accuracyhv.svg)
+![image](https://user-images.githubusercontent.com/81873177/117008376-53ecf280-acf3-11eb-8c75-6d08cbe69810.png)
 
 График функции потерь
 
+![SVG example](./grafs/epoch_losshv.svg)
+![image](https://user-images.githubusercontent.com/81873177/117008364-4f283e80-acf3-11eb-8b90-74b0351efe3c.png)
 
 ## b. Использование случайной части изображения 
 ## Графики
+
 
 
 График точности
