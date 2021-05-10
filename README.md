@@ -34,3 +34,4 @@
 ![image](https://user-images.githubusercontent.com/81873177/117680004-6ff00880-b1b9-11eb-9242-eebadd1d01af.png)
 
 ## Анализ результатов:
+При использовании техники обучения Fine Tuning с параметром темпа обучения, равным 1е-7, из графиков точности видно, что значения улучшились на 0,95% (augmentation with optimal settings - 68,10%, Fine Tuning - 69,05%)
